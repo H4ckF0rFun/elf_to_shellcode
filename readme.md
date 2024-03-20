@@ -27,7 +27,7 @@ root@LAPTOP-UFBOJERU:/elf_to_shellcode_amd64# ./run /tmp/shellcode
 elf_to_shellcode_amd64.py  loader_amd64  run
 ```
 
-1. convert busybox to shellcode 
+2. convert busybox to shellcode 
 
 ```bash
 python3 ./elf_to_shellcode_amd64.py /bin/busybox sh >/tmp/shellcode
