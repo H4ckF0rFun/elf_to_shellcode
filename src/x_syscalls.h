@@ -10,7 +10,7 @@
 
 void* x_brk(void* addr);
 int	x_exit(int status);
-int	x_open(const char *pathname, int flags);
+int	x_openat(int dirfd,const char *pathname, int flags);
 int	x_close(int fd);
 int	x_lseek(int fd, off_t offset, int whence);
 ssize_t	x_read(int fd, void *buf, size_t count);

@@ -1,7 +1,10 @@
+
+
 #include <syscall.h>
 
 #include "x_asm.h"
 #include "x_syscalls.h"
+
 
 #define SYSCALL(name, ...)  x_syscall(SYS_##name, __VA_ARGS__)
 #define DEF_SYSCALL1(ret, name, t1, a1) \
@@ -20,7 +23,7 @@ ret x_##name(t1 a1, t2 a2, t3 a3) \
 	return (ret)SYSCALL(name, a1, a2, a3); \
 }
 
-DEF_SYSCALL2(int, open, const char *, filename, int, flags)
+DEF_SYSCALL3(int, openat, int , dirfd, const char *,  filename, int, flags)
 DEF_SYSCALL3(ssize_t, read, int, fd, void *, buf, size_t, count)
 DEF_SYSCALL3(ssize_t, write, int, fd, const void *, buf, size_t, count)
 DEF_SYSCALL1(int, close, int, fd)

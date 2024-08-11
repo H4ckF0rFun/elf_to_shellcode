@@ -1,7 +1,9 @@
 #include "x_asm.h"
 #include "x_syscalls.h"
 #include <elf.h>
-
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 #if ELFCLASS == ELFCLASS64
 #  define Elf_Ehdr	Elf64_Ehdr
@@ -284,7 +286,7 @@ void x_execve(const char * file,int argc, const char ** argv,const char ** envp,
 	/* map */
 	for (i = 0;; i++, ehdr++) {
 		if(elf_interp || !load_from_mem){
-			fd = x_open(file,O_RDONLY);
+			fd = x_openat(AT_FDCWD,file,O_RDONLY);
 			
 			if(fd < 0)
 				x_exit(-2);

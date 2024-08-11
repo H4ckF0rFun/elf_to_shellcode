@@ -4,7 +4,7 @@
 ARCH ?= amd64
 
 ARCHS32 := arm
-ARCHS64 := amd64
+ARCHS64 := amd64 aarch64
 ARCHS := $(ARCHS32) $(ARCHS64)
 
 CC := $(PREFIX)gcc
