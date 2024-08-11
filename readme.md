@@ -5,6 +5,8 @@
 ### Supporter **architectures**
 
 - amd64
+- aarch64
+- arm
 
 ### Usage:
 
