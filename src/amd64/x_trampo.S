@@ -21,8 +21,6 @@ x_trampo:
 	xor %r13, %r13
 	xor %r14, %r14
 	xor %r15, %r15
-
 	jmp %rax
-	/* Should not reach. */
 	hlt
 

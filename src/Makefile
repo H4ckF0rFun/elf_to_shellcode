@@ -1,5 +1,5 @@
 # make ARCH=arm PREFIX=arm-linux-gnueabi-
-# maek to generate amd64 execve 
+# make ARCH=aarch64 PREFIX=aarch64-linux-gnu-
 
 ARCH ?= amd64
 

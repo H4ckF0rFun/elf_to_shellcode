@@ -413,13 +413,13 @@ do { \
 	NEW_AUX_ENT(AT_BASE, elf_interp ? base[X_INTERP] : 0);		//base address of interpreter 
 	NEW_AUX_ENT(AT_ENTRY, entry[X_PROG]);						//entry of program.
 	NEW_AUX_ENT(AT_EXECFN, (unsigned long)argv[0]);
-	NEW_AUX_ENT(AT_RANDOM,base[X_PROG]);						//随便写一个....
+	NEW_AUX_ENT(AT_RANDOM,(unsigned long)(av + 6));								//这里得是一段可读可写的区域.go的程序会修改random bytes.
 	NEW_AUX_ENT(AT_UID, 0);
 	NEW_AUX_ENT(AT_EUID, 0);
 	NEW_AUX_ENT(AT_GID, 0);
 	NEW_AUX_ENT(AT_EGID, 0);
-	NEW_AUX_ENT(AT_NULL,0);				//end flag....
-
+	NEW_AUX_ENT(AT_NULL,0);										//end flag....
+	
 #undef NEW_AUX_ENT
 	//run
 	x_trampo((void (*)(void))(elf_interp ? entry[X_INTERP] : entry[X_PROG]), sp);

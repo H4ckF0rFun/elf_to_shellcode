@@ -22,7 +22,7 @@ arg_list += 'argv_{}:\n\t.byte 0x0\n'.format(id)
 '''
 elf_to_shellcode   elf   argv0,argv1,.....
 
-arm-linux-gnueabi-objcopy -O binary -j .text ./execve ../elf_to_shellcode_arm/loader_arm
+aarch64-linux-gnu-objcopy -O binary -j .text ./execve ../elf_to_shellcode_aarch64/loader_aarch64
 
 '''
 
