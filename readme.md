@@ -11,7 +11,7 @@
 ### Usage:
 
 ```bash
-python3 ./elf_to_shellcode_amd64.py elf command...
+python3 ./elf_to_shellcode_amd64.py elf argv[0] argv[1] ...
 ```
 
 ### Sample:
