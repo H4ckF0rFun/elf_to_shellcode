@@ -7,6 +7,7 @@
 - amd64
 - aarch64
 - arm
+- i386
 
 ### Usage:
 
