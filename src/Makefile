@@ -1,9 +1,9 @@
 # make ARCH=arm PREFIX=arm-linux-gnueabi-
 # make ARCH=aarch64 PREFIX=aarch64-linux-gnu-
-
+# make ARCH=i386 PREFIX=i686-linux-gnu-
 ARCH ?= amd64
 
-ARCHS32 := arm
+ARCHS32 := arm i386
 ARCHS64 := amd64 aarch64
 ARCHS := $(ARCHS32) $(ARCHS64)
 

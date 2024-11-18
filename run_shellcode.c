@@ -15,7 +15,6 @@ int main(int argc,char * argv[]){
 		printf("Usage : %s <shellcode>\n",argv[0]);
 		exit(1);
 	}
-
         FILE * fp = fopen(argv[1],"rb");
         if(!fp){
                 return -1;
